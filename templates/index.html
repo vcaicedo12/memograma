@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Juego de Memoria - DBZ</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <section>
+        <h1>Juego de Memoria - DBZ</h1>
+    </section>
+    <div id="nickname-display"></div>
+    <div id="intentos">Intentos: 0</div>
+
+    <section>
+        <div id="audioControl">
+            <img id="audioIcon" src="/static/img/iconos/bocina.png">
+        </div>
+        <audio id="audioPlayer" src="/static/songs/Dragon ball Z soundtrack Battle theme (Fight music).mp3" autoplay></audio>
+        
+        
+        <div id="tablero">
+            <div class="carta carta1 reverso"></div>
+            <div class="carta carta2 reverso"></div>
+            <div class="carta carta3 reverso"></div>
+            <div class="carta carta4 reverso"></div>
+            <div class="carta carta1 reverso"></div>
+            <div class="carta carta2 reverso"></div>
+            <div class="carta carta3 reverso"></div>
+            <div class="carta carta4 reverso"></div>
+
+        </div>
+        <div id="temporizador">60</div>
+
+    </section>
+    <script src="/static/jss/logicaReverso.js"></script>
+    <script src="/static/jss/aleatorias.js"></script>
+    <script src="/static/jss/logicaJuegos.js"></script>
+    <script src="/static/jss/temporizados.js"></script>
+    <script src="/static/jss/animacion.js"></script>
+    <script src="/static/jss/giro.js"></script>
+    <script src="/static/jss/intentos.js"></script>
+    <script src="/static/jss/obtenerName.js"></script>
+    <script src="/static/jss/controlarAudio.js"></script>
+</body>
+</html>

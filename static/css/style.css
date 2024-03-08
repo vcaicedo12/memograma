@@ -1,0 +1,100 @@
+#audioControl {
+    position: fixed; /* Cambia esto según donde quieras posicionar el botón */
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+#audioIcon {
+    width: 50px; /* Cambia esto según el tamaño que quieras para el icono */
+    height: 50px;
+}
+
+
+body {
+    background-color: #000000; /* Fondo negro */
+    font-family: 'Arial', sans-serif;
+}
+
+h1 {
+    text-align: center;
+    color: #FFD700; /* Dorado */
+    padding: 20px 0;
+}
+
+#nickname-display {
+    margin-top: 20px;
+    font-size: 1.5em;
+    color: #FFD700; /* Dorado */
+    text-align: center;
+    font-family: 'Madimi One', sans-serif;
+    text-transform: uppercase;
+}
+
+#intentos {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #FFD700; /* Dorado */
+    text-align: center;
+    margin-top: 10px;
+}
+
+#temporizador {
+    font-size: 2em;
+    font-weight: bold;
+    color: #FF6347; /* Rojo intenso */
+    text-align: center;
+    padding: 20px;
+    border: 2px solid #FF6347;
+    border-radius: 10px;
+    margin: 20px auto;
+    width: 100px;
+}
+
+#tablero {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 400px;
+    margin: auto;
+    background-color: #FFD700; /* Dorado */
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.5s ease-in-out;
+}
+#tablero.shuffle {
+    transform: rotate(360deg);
+}
+
+.carta {
+    width: 100px;
+    height: 150px;
+    margin: 10px;
+    background-size: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: transform 0.5s ease-in-out;
+}
+.carta.reverso {
+    background-image: url('/static/img/cartas_dbz/reverso.png');
+}
+
+.carta1 {
+    background-image: url('/static/img/cartas_dbz/carta_1.png');
+}
+
+.carta2 {
+    background-image: url('/static/img/cartas_dbz/carta_2.png');
+}
+
+.carta3 {
+    background-image: url('/static/img/cartas_dbz/carta_3.png');
+}
+
+.carta4 {
+    background-image: url('/static/img/cartas_dbz/carta_4.png');
+}
+.carta.volteada {
+    transform: rotateY(180deg);
+}
+

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/inicio.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anta&display=swap" rel="stylesheet">   
+    <title>Inicio</title>
+</head>
+<body>
+    <h1>ADIVINA EL PAR DE CARTAS</h1>
+
+    <div id="contenedor-juego">
+        <div id="error-message" style="display: none;"></div>
+        <input type="text" id="nickname" placeholder="Ingresa tu nickname">
+        <h2>Escoje tu tematica favorita</h2>
+        <div id="contenedor-tematica">
+            <input type="radio" id="stranger-things" name="tematica" value="stranger-things">
+            <label for="stranger-things">Stranger Things</label><br>
+            <input type="radio" id="dragon-ball" name="tematica" value="dragon-ball">
+            <label for="dragon-ball">Dragon Ball Z</label>
+        </div>
+
+        <button id="boton-jugar">
+            <img src="{{ url_for('static', filename='img/iconos/play.png') }}" alt="Play Icon">
+        </button>
+    </div>
+    <script src="{{ url_for('static', filename='jss/inicio.js') }}"></script>
+</body>
+</html>
+
+

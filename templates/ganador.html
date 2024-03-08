@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Felicidades Ganaste</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/win.css') }}">
+</head>
+<body>
+    <div class="confeti-container"></div>
+    <div class="mensaje-felicidades">Felicidades, Ganaste!</div>
+
+    <!-- Agrega la tabla para mostrar la información -->
+    <table id="info-table">
+        <tr>
+            <td>Nickname:</td>
+            <td id="nickname-display"></td>
+        </tr>
+        <tr>
+            <td>Tiempo:</td>
+            <td id="tiempo-display"></td>
+        </tr>
+        <tr>
+            <td>Intentos:</td>
+            <td id="intentos-display"></td>
+        </tr>
+    </table>
+
+    <button id="volver-inicio">Volver al Inicio</button>
+    
+    <script src="/static/jss/animacionWin.js"></script>
+    <script src="/static/jss/obtenerName.js"></script>
+    <script>
+        document.getElementById('volver-inicio').addEventListener('click', function() {
+          
+          localStorage.removeItem('intentos');
+          localStorage.removeItem('tiempo');
+
+            // Redirige al usuario a la página de inicio
+            window.location.href = '/';
+        });
+    </script>
+</body>
+</html>
