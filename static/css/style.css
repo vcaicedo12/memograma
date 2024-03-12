@@ -1,84 +1,101 @@
-#audioControl {
-    position: fixed; /* Cambia esto según donde quieras posicionar el botón */
-    bottom: 20px;
-    right: 20px;
-    cursor: pointer;
-}
-
-#audioIcon {
-    width: 50px; /* Cambia esto según el tamaño que quieras para el icono */
-    height: 50px;
-}
-
-
+/* Body Styles */
 body {
-    background-color: #000000; /* Fondo negro */
+    background-color: #171920;
+    color: #fff;
     font-family: 'Arial', sans-serif;
 }
 
-h1 {
-    text-align: center;
-    color: #FFD700; /* Dorado */
-    padding: 20px 0;
+/* Audio Control */
+#audioControl {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    color: #f0a500;
 }
 
+#audioIcon {
+    width: 50px;
+    height: 50px;
+}
+
+/* Headings */
+h1 {
+    text-align: center;
+    color: #f0a500;
+    padding: 20px 0;
+    font-family: 'Saiyan', sans-serif;
+}
+
+/* Player Information */
 #nickname-display {
     margin-top: 20px;
     font-size: 1.5em;
-    color: #FFD700; /* Dorado */
+    color: #f0a500;
     text-align: center;
-    font-family: 'Madimi One', sans-serif;
     text-transform: uppercase;
+    font-family: 'Saiyan', sans-serif;
 }
 
 #intentos {
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #FFD700; /* Dorado */
-    text-align: center;
-    margin-top: 10px;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #f0a500; /* Orange like Super Saiyan hair */
+  text-align: center;
+  margin-top: 10px;
 }
 
 #temporizador {
     font-size: 2em;
     font-weight: bold;
-    color: #FF6347; /* Rojo intenso */
+    color: #e50914; /* Red like Goku's Gi */
     text-align: center;
-    padding: 20px;
-    border: 2px solid #FF6347;
+    padding: 10px;
+    border: 2px solid black; /* Black border for contrast */
     border-radius: 10px;
     margin: 20px auto;
     width: 100px;
+  }
+  
+  #temporizador.parpadeante {
+    animation: parpadeo 0.5s infinite alternate; /* Animación de parpadeo */
+  }
+
+
+/* Game Board */
+#tablero {
+  display: flex;
+  flex-wrap: wrap; /* Key for automatic line wrapping */
+  justify-content: space-around; /* Distribute cards evenly */
+  margin: auto;
+  background-color: #282C34;
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.5s ease-in-out;
 }
 
-#tablero {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    width: 400px;
-    margin: auto;
-    background-color: #FFD700; /* Dorado */
-    padding: 20px;
-    border-radius: 10px;
-    transition: transform 0.5s ease-in-out;
-}
 #tablero.shuffle {
     transform: rotate(360deg);
 }
 
+/* Card Styles */
 .carta {
-    width: 100px;
-    height: 150px;
-    margin: 10px;
+    width: 120px;
+    height: 180px;
+    margin: 10px 5px;
     background-size: cover;
     border-radius: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: transform 0.5s ease-in-out;
+    animation: none;
+   
 }
+
 .carta.reverso {
     background-image: url('/static/img/cartas_dbz/reverso.png');
 }
 
+/* Individual Card Images */
 .carta1 {
     background-image: url('/static/img/cartas_dbz/carta_1.png');
 }
@@ -94,7 +111,61 @@ h1 {
 .carta4 {
     background-image: url('/static/img/cartas_dbz/carta_4.png');
 }
+.carta5{
+  background-image: url('/static/img/cartas_dbz/carta_5.png');
+}
+.carta6{
+  background-image: url('/static/img/cartas_dbz/carta_6.png');
+}
+.carta7{
+  background-image: url('/static/img/cartas_dbz/carta_7.png');
+}
+.carta8{
+  background-image: url('/static/img/cartas_dbz/carta_8.png');
+}
+.carta9{
+  background-image: url('/static/img/cartas_dbz/carta_9.png');
+}
+.carta10{
+  background-image: url('/static/img/cartas_dbz/carta_10.png');
+}
 .carta.volteada {
     transform: rotateY(180deg);
 }
 
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  #tablero {
+    width: 50%; /* Adjust width for larger screens */
+  }
+}
+
+@media (min-width: 1024px) {
+  #tablero {
+    width: 50%; /* Adjust width for even larger screens */
+  }
+}
+
+@keyframes cascada {
+    from {
+      transform: translateY(-100px) rotateX(90deg); /* Start off-screen and rotated */
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0) rotateX(0); /* End in final position */
+      opacity: 1;
+    }
+  }
+
+  #tablero.shuffle .carta {
+    animation: cascada inherit; /* Inherit animation from parent */
+  }
+  @keyframes parpadeo {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }

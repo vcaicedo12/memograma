@@ -1,0 +1,46 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    display: flex; /* Center content vertically and horizontally */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure content fills viewport height */
+    background-color: #f0f2f5; /* Enel X light gray background */
+  }
+  
+  .contenedor-principal {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background-color: #fff; /* White container background */
+  }
+  
+  h1 {
+    font-size: 2em;
+    margin-top: 0;
+    color: #333; /* Enel X dark gray text */
+  }
+  
+  p {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #333; /* Enel X dark gray text */
+  }
+  
+  #btn-reiniciar {
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: bold;
+    border: none; /* Remove border for modern look */
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #007bff; /* Enel X primary blue */
+    color: #fff; /* White text on button */
+    transition: background-color 0.2s ease-in-out; /* Smooth hover effect */
+  }
+  
+  #btn-reiniciar:hover {
+    background-color: #0062cc; /* Darken blue on hover */
+  }
+  

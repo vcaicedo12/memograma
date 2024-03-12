@@ -23,3 +23,4 @@ document.getElementById('boton-jugar').addEventListener('click', function() {
     }
 });
 
+

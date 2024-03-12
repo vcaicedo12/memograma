@@ -3,6 +3,17 @@
 <head>
     <title>Juego de Memoria - DBZ</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        #countdown {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-size: 80px;
+          color: white;
+          text-shadow: 0 0 5px black; /* Optional drop shadow effect */
+        }
+      </style>
 </head>
 <body>
     <section>
@@ -17,19 +28,30 @@
         </div>
         <audio id="audioPlayer" src="/static/songs/Dragon ball Z soundtrack Battle theme (Fight music).mp3" autoplay></audio>
         
-        
         <div id="tablero">
             <div class="carta carta1 reverso"></div>
             <div class="carta carta2 reverso"></div>
             <div class="carta carta3 reverso"></div>
             <div class="carta carta4 reverso"></div>
+            <div class="carta carta5 reverso"></div>
+            <div class="carta carta6 reverso"></div>
+            <div class="carta carta7 reverso"></div>
+            <div class="carta carta8 reverso"></div>
+            <div class="carta carta9 reverso"></div>
+            <div class="carta carta10 reverso"></div>
             <div class="carta carta1 reverso"></div>
             <div class="carta carta2 reverso"></div>
             <div class="carta carta3 reverso"></div>
             <div class="carta carta4 reverso"></div>
+            <div class="carta carta5 reverso"></div>
+            <div class="carta carta6 reverso"></div>
+            <div class="carta carta7 reverso"></div>
+            <div class="carta carta8 reverso"></div>
+            <div class="carta carta9 reverso"></div>
+            <div class="carta carta10 reverso"></div>
 
         </div>
-        <div id="temporizador">60</div>
+        <div id="temporizador">90</div>
 
     </section>
     <script src="/static/jss/logicaReverso.js"></script>

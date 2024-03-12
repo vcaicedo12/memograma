@@ -18,8 +18,6 @@ var tiempoRestante = tiempoGuardado ? parseInt(tiempoGuardado) : 60;
 var intentosElement = document.getElementById('intentos');
 intentosElement.textContent = 'Intentos: ' + intentos;
 
-
-
 cartas.forEach(function(carta) {
     carta.addEventListener('click', function() {
         if (cartaAbierta) {
@@ -56,6 +54,3 @@ cartas.forEach(function(carta) {
         }
     });
 });
-
-
-

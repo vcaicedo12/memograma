@@ -1,15 +1,32 @@
-// Supongamos que tienes una función para insertar cartas en el tablero
 function insertarCartasEnTablero() {
-    // Lógica para insertar las cartas en el tablero
+  // Get all card elements
+  const cartas = document.querySelectorAll('.carta');
 
-    // Agrega la clase shuffle para activar el efecto de barajado
-    document.getElementById('tablero').classList.add('shuffle');
+  // Initially reveal all card faces
+  cartas.forEach(carta => {
+    carta.classList.remove('reverso'); // Remove the class that hides the card face
+  });
 
-    // Después de un breve momento, quita la clase shuffle para detener el efecto de barajado
-    setTimeout(function() {
-        document.getElementById('tablero').classList.remove('shuffle');
-    }, 500); // Ajusta el tiempo según la duración de la transición en tu CSS
+  // Flip cards back after 5 seconds
+  setTimeout(() => {
+    cartas.forEach(carta => {
+      carta.classList.add('reverso'); // Re-apply the class to hide card faces
+    });
+
+    // Start card shuffling animation
+    cartas.forEach((carta, index) => {
+      carta.style.animation = 'cascada 0.5s ease-in-out forwards';
+      carta.style.animationDelay = `${index * 0.1}s`; // Stagger animation for shuffling effect
+    });
+
+    // Optional: remove shuffle class after animation
+    setTimeout(() => {
+      document.getElementById('tablero').classList.remove('shuffle');
+    }, 550); // Adjusted for animation duration
+  }, 5000); // Delay for card reveal increased to 5 seconds
 }
 
-// Llama a la función cuando quieras insertar las cartas en el tablero
+// Call the function to start the process
 insertarCartasEnTablero();
+
+  

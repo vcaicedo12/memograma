@@ -15,6 +15,9 @@ def juego_st():
 @app.route('/win')
 def win():
     return render_template('ganador.html')  # Asume que 'index.html' es la página de tu juego
+@app.route('/lost')
+def lost():
+    return render_template('lost.html')  # Asume que 'index.html' es la página de tu juego
 
 if __name__ == '__main__':
     app.run(debug=True)
